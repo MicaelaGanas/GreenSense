@@ -1,12 +1,39 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    // Component Loader
+    const components = [
+        'header', 'hero', 'challenge', 'features', 'problems', 
+        'how-it-works', 'benefits', 'target-audience', 'differentiation', 
+        'getting-started', 'future', 'cta', 'footer'
+    ];
+
+    for (const component of components) {
+        try {
+            const response = await fetch(`components/${component}.html`);
+            if (response.ok) {
+                const html = await response.text();
+                const container = document.getElementById(`${component}-container`);
+                if (container) container.innerHTML = html;
+            } else {
+                console.error(`Failed to load ${component}: ${response.status}`);
+            }
+        } catch (error) {
+            console.error(`Error loading ${component}:`, error);
+        }
+    }
+
+    // Initialize Scripts after content is loaded
+    initializeScripts();
+});
+
+function initializeScripts() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const header = document.querySelector('.header');
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+        if (header && window.scrollY > 50) {
             header.classList.add('scrolled');
-        } else {
+        } else if (header) {
             header.classList.remove('scrolled');
         }
     });
@@ -27,8 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            const icon = hamburger.querySelector('i');
+            if (navMenu) navMenu.classList.remove('active');
+            const icon = hamburger ? hamburger.querySelector('i') : null;
             if (icon) {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
@@ -65,4 +92,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
+}
