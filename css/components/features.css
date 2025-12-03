@@ -1,4 +1,3 @@
-/* Features Section */
 .features {
     background-color: var(--color-bg-cream);
 }
@@ -36,9 +35,7 @@
     font-size: 1.25rem;
 }
 
-/* Features Highlight Section (Dark Mode) */
 .features-highlight-section {
-    /* Restored original color variables for brand consistency */
     background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
     color: white;
     position: relative;
@@ -46,7 +43,6 @@
     padding: 7.5rem 0;
 }
 
-/* Decorative overlay: subtle light/dark accents that use brand variables at very low opacity */
 .features-highlight-section::before {
     content: '';
     position: absolute;
@@ -57,7 +53,6 @@
     mix-blend-mode: overlay;
 }
 
-/* Background Shapes */
 .features-bg-shape {
     position: absolute;
     border-radius: 50%;
@@ -73,26 +68,25 @@
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: 55% 45%; /* make the visual column larger so image reads bigger */
+    grid-template-columns: 55% 45%; 
     gap: 3.5rem;
     align-items: center;
     padding: 0 1rem;
 }
 
-/* Left Side Text */
+
 .features-text-block h2 {
     font-family: 'Playfair Display', var(--font-heading);
-    font-size: 2.8rem; /* slightly smaller base line */
+    font-size: 2.8rem; 
     font-weight: 600;
     margin-bottom: 0.6rem;
     color: rgba(255,255,255,0.92);
     line-height: 1.05;
 }
 
-/* Make the brand name stand out on its own line (HTML has a <br>) */
 .features-text-block .highlight-text {
     display: block;
-    font-size: 3.6rem; /* larger, punchy brand */
+    font-size: 3.6rem; 
     font-weight: 900;
     margin-top: 0.15rem;
     margin-left: 0;
@@ -103,7 +97,7 @@
     letter-spacing: -1px;
 }
 
-/* Decorative underline accent targeted to the brand only */
+
 .features-text-block .highlight-text::after {
     content: '';
     display: block;
@@ -117,7 +111,7 @@
 
 .features-text-block {
     max-width: 720px;
-    text-align: left; /* left-align copy on wider screens */
+    text-align: left; 
 }
 .features-text-block p {
     font-size: 1.06rem;
@@ -126,7 +120,6 @@
     line-height: 1.7;
 }
 
-/* Styling for the expanded GreenSense copy to improve readability in the dark feature panel */
 .features-text-block .green-sense-copy p {
     font-size: 1.05rem;
     color: rgba(255,255,255,0.92);
@@ -191,13 +184,12 @@
     opacity: 0.98;
 }
 
-/* Subtle animation for the visual image */
 .features-visual-image {
     transition: transform 0.6s cubic-bezier(.22,.9,.32,1), box-shadow 0.4s ease;
 }
 .features-visual-image:hover { transform: translateY(-6px) scale(1.02); }
 
-/* Right Side Grid */
+
 .features-bento-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -217,7 +209,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    min-height: 240px; /* taller cards for better spacing */
+    min-height: 240px; 
 }
 
 .bento-card:hover {
@@ -240,16 +232,15 @@
     color: var(--color-secondary);
 }
 
-/* Visual panel used when cards are removed */
 .features-visual {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative; /* enable absolute positioning of the CTA */
+    position: relative;
 }
 .features-visual-image {
     width: 100%;
-    max-width: 760px; /* larger image on desktop */
+    max-width: 760px; 
     border-radius: var(--radius-lg);
     box-shadow: 0 34px 80px rgba(6,20,10,0.36);
     border: 6px solid rgba(255,255,255,0.04);
@@ -257,14 +248,13 @@
     transform-origin: center center;
 }
 
-/* Visual wrapper for image + CTA */
+
 .features-visual-wrap {
     position: relative;
     display: inline-block;
-    margin-right: 2.5rem; /* push image left a little to create breathing room from the text */
+    margin-right: 2.5rem; 
 }
 
-/* Floating CTA placed on the visual image */
 .visual-cta {
     position: absolute;
     left: 20px;
@@ -306,8 +296,7 @@
     line-height: 1.5;
 }
 
-/* Responsive */
-/* Mobile Responsive Fixes for Features Section */
+
 @media (max-width: 992px) {
     .features-highlight-section {
         padding: 4rem 0;
@@ -322,7 +311,6 @@
     .features-text-block {
         max-width: 100%;
         text-align: center;
-        /* Ensure text is readable and centered */
         padding: 0 1rem;
     }
     
@@ -336,7 +324,6 @@
         margin-right: auto;
     }
     
-    /* Center the list items on mobile but keep text left-aligned */
     .features-text-block .feature-list {
         text-align: left;
         display: inline-grid;
@@ -393,7 +380,6 @@
     }
 }
 
-/* Insight Cards (Image + Content) - KEEPING FOR LEGACY OR OTHER SECTIONS IF NEEDED */
 .insight-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -473,7 +459,6 @@
     color: var(--color-text-muted);
 }
 
-/* Problems Section - Modern Split Layout */
 .problems-wrapper {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
@@ -483,7 +468,6 @@
     z-index: 2;
 }
 
-/* Background Decoration */
 .problems-decoration {
     position: absolute;
     top: 0;
@@ -515,7 +499,7 @@
     right: -10%;
     width: 300px;
     height: 300px;
-    background: rgba(255, 193, 7, 0.1); /* Subtle gold/yellow */
+    background: rgba(255, 193, 7, 0.1); 
 }
 
 .problems-intro {
@@ -584,7 +568,7 @@
     position: relative;
 }
 
-/* Floating icon over the image/content border */
+
 .problem-ui-icon {
     position: absolute;
     top: -24px;
@@ -592,7 +576,7 @@
     width: 48px;
     height: 48px;
     background: white;
-    color: var(--color-primary); /* Changed from red to primary green */
+    color: var(--color-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -606,7 +590,7 @@
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
     color: var(--color-text-dark);
-    margin-top: 0.5rem; /* Space for the overlapping icon if needed, though icon is right aligned */
+    margin-top: 0.5rem;
 }
 
 .problem-ui-card p {

@@ -1,9 +1,9 @@
 :root {
     /* Color Palette */
-    --color-primary: #2D5A27; /* Forest Green */
+    --color-primary: #2D5A27; 
     --color-primary-dark: #1e3d1a;
-    --color-secondary: #8FB339; /* Fresh Green */
-    --color-accent: #E89F28; /* Harvest Gold */
+    --color-secondary: #8FB339; 
+    --color-accent: #E89F28; 
     --color-accent-hover: #d68b15;
     --color-bg-cream: #FDFBF7;
     --color-bg-white: #FFFFFF;

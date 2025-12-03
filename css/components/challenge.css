@@ -43,7 +43,6 @@
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 
-/* Make image smaller on very large screens so it doesn't overwhelm text */
 @media (min-width: 1200px) {
   .challenge-image-wrap { max-width: 460px; }
 }

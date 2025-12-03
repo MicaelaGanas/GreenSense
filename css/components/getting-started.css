@@ -31,12 +31,11 @@
     position: relative;
 }
 
-/* Connecting line for desktop */
 @media (min-width: 992px) {
     .start-grid::before {
         content: '';
         position: absolute;
-        top: 165px; /* Adjust based on image height + badge position */
+        top: 165px;
         left: 10%;
         width: 80%;
         height: 2px;
@@ -56,11 +55,11 @@
     position: relative;
     width: 100%;
     height: 180px;
-    /* Removed overflow: hidden so the number badge can stick out */
+
     margin-bottom: 2rem;
     box-shadow: 0 10px 20px rgba(0,0,0,0.08);
     transition: transform 0.3s ease;
-    border-radius: 16px; /* Keep radius for shadow shape */
+    border-radius: 16px; 
 }
 
 .start-card:hover .start-image-wrapper {
@@ -71,7 +70,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 16px; /* Apply radius directly to image */
+    border-radius: 16px; 
 }
 
 .start-number {
@@ -91,7 +90,7 @@
     font-size: 1.1rem;
     border: 4px solid white;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 10; /* Ensure it sits on top */
+    z-index: 10; 
 }
 
 .start-content h4 {
