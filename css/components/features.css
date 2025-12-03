@@ -307,25 +307,87 @@
 }
 
 /* Responsive */
-@media (max-width: 968px) {
+/* Mobile Responsive Fixes for Features Section */
+@media (max-width: 992px) {
+    .features-highlight-section {
+        padding: 4rem 0;
+    }
+
     .features-content-wrapper {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 3rem;
         text-align: center;
     }
 
-    .features-text-block { text-align: center; }
-    .features-text-block h2 { font-size: 2.2rem; }
-    .feature-cta-btn { margin: 0 auto; }
+    .features-text-block {
+        max-width: 100%;
+        text-align: center;
+        /* Ensure text is readable and centered */
+        padding: 0 1rem;
+    }
+    
+    .features-text-block .highlight-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .features-text-block .highlight-text::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Center the list items on mobile but keep text left-aligned */
+    .features-text-block .feature-list {
+        text-align: left;
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        max-width: 600px;
+        margin: 2rem auto;
+        width: 100%;
+    }
 
-    /* Move the CTA below the image on tablet/mobile for readability */
-    .visual-cta { position: static; display: inline-block; margin: 1rem auto 0 auto; }
+    .features-visual-wrap {
+        margin-right: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .features-visual {
+        justify-content: center;
+        width: 100%;
+    }
 
-    /* Remove the extra right margin on smaller screens so layout fits */
-    .features-visual-wrap { margin-right: 0; }
+    .features-visual-image {
+        max-width: 100%;
+        width: auto;
+        max-height: 400px;
+    }
+    
+    .visual-cta {
+        position: static;
+        display: inline-flex;
+        margin-top: 1.5rem;
+        transform: none;
+    }
 }
 
 @media (max-width: 600px) {
+    .features-text-block h2 {
+        font-size: 2.2rem;
+    }
+    
+    .features-text-block .highlight-text {
+        font-size: 2.5rem;
+    }
+    
+    .features-text-block .feature-list {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
     .features-bento-grid {
         grid-template-columns: 1fr;
     }
