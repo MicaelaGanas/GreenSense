@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    // Component Loader
     const components = [
         'header', 'hero', 'challenge', 'features', 'problems', 
         'how-it-works', 'benefits', 'target-audience', 'differentiation', 
@@ -21,7 +20,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    // Initialize Scripts after content is loaded
     initializeScripts();
 });
 

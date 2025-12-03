@@ -1,6 +1,5 @@
 /* Future Section - Matching Features Design */
 .future-section {
-    /* Match features-highlight-section background */
     background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
     color: white;
     position: relative;
@@ -8,7 +7,6 @@
     padding: 7.5rem 0;
 }
 
-/* Background Overlay */
 .future-section::before {
     content: '';
     position: absolute;
@@ -19,7 +17,7 @@
     mix-blend-mode: overlay;
 }
 
-/* Background Shapes */
+
 .future-bg-shape {
     position: absolute;
     border-radius: 50%;
@@ -32,18 +30,16 @@
 .future-shape-2 { bottom: -24%; right: -14%; width: 420px; height: 420px; background: var(--color-accent); opacity: 0.10; }
 
 .future-content-wrapper {
+    display: grid;
+    grid-template-columns: 60% 30%; /* Increased text width to push image further right */
+    gap: 8rem; /* Increased gap to separate content */
+    align-items: center;
     position: relative;
     z-index: 2;
-    display: grid;
-    grid-template-columns: 48% 48%; /* Balanced split */
-    gap: 4%;
-    align-items: center;
-    padding: 0 1rem;
 }
 
-/* Text Block Styling */
 .future-text-block h2 {
-    font-family: 'Playfair Display', var(--font-heading);
+    font-family: 'Playfair Display', var(--font-heading);   
     font-size: 2.8rem;
     font-weight: 600;
     margin-bottom: 0.6rem;
@@ -82,7 +78,6 @@
     line-height: 1.7;
 }
 
-/* Lists Styling */
 .future-lists-container {
     display: flex;
     flex-direction: column;
@@ -122,7 +117,6 @@
     font-size: 0.9rem;
 }
 
-/* Visual Side */
 .future-visual {
     position: relative;
     display: flex;
@@ -135,9 +129,9 @@
     overflow: hidden;
     box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
     border: 1px solid rgba(255,255,255,0.1);
-    max-width: 550px; /* Increased size */
+    max-width: 550px; 
     width: 100%;
-    aspect-ratio: 4/3; /* Fixed aspect ratio for slideshow */
+    aspect-ratio: 4/3; 
 }
 
 .future-visual-image {
@@ -151,7 +145,6 @@
     animation: imageFade 12s infinite;
 }
 
-/* Animation Delays for 3 images */
 .future-visual-image:nth-child(1) {
     animation-delay: 0s;
 }
@@ -170,7 +163,6 @@
     100% { opacity: 0; transform: scale(1.1); }
 }
 
-/* Quote Styling */
 .future-quote-box {
     position: relative;
     margin-top: 3rem;
