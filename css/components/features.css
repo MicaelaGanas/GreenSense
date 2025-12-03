@@ -1,0 +1,574 @@
+/* Features Section */
+.features {
+    background-color: var(--color-bg-cream);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.feature-card {
+    background: var(--color-bg-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-normal);
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    display: inline-block;
+}
+
+.feature-card h3 {
+    color: var(--color-primary);
+    font-size: 1.25rem;
+}
+
+/* Features Highlight Section (Dark Mode) */
+.features-highlight-section {
+    /* Restored original color variables for brand consistency */
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding: 7.5rem 0;
+}
+
+/* Decorative overlay: subtle light/dark accents that use brand variables at very low opacity */
+.features-highlight-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 8% 18%, rgba(255,255,255,0.04), transparent 8%),
+                radial-gradient(circle at 88% 82%, rgba(0,0,0,0.04), transparent 12%);
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
+/* Background Shapes */
+.features-bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    z-index: 1;
+    pointer-events: none;
+}
+.shape-1 { top: -24%; right: -14%; width: 520px; height: 520px; background: var(--color-secondary); opacity: 0.12; }
+.shape-2 { bottom: -24%; left: -14%; width: 420px; height: 420px; background: var(--color-accent); opacity: 0.10; }
+
+.features-content-wrapper {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 55% 45%; /* make the visual column larger so image reads bigger */
+    gap: 3.5rem;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+/* Left Side Text */
+.features-text-block h2 {
+    font-family: 'Playfair Display', var(--font-heading);
+    font-size: 2.8rem; /* slightly smaller base line */
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: rgba(255,255,255,0.92);
+    line-height: 1.05;
+}
+
+/* Make the brand name stand out on its own line (HTML has a <br>) */
+.features-text-block .highlight-text {
+    display: block;
+    font-size: 3.6rem; /* larger, punchy brand */
+    font-weight: 900;
+    margin-top: 0.15rem;
+    margin-left: 0;
+    color: transparent;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    letter-spacing: -1px;
+}
+
+/* Decorative underline accent targeted to the brand only */
+.features-text-block .highlight-text::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 8px;
+    margin-top: 0.55rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+    opacity: 0.9;
+}
+
+.features-text-block {
+    max-width: 720px;
+    text-align: left; /* left-align copy on wider screens */
+}
+.features-text-block p {
+    font-size: 1.06rem;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 1.15rem;
+    line-height: 1.7;
+}
+
+/* Styling for the expanded GreenSense copy to improve readability in the dark feature panel */
+.features-text-block .green-sense-copy p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.92);
+    margin-bottom: 1rem;
+}
+.features-text-block .green-sense-copy p:last-of-type {
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+.features-text-block .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 1.25rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem 1.2rem;
+}
+.features-text-block .feature-list li {
+    position: relative;
+    padding-left: 36px;
+    color: rgba(255,255,255,0.95);
+    font-size: 1rem;
+}
+.features-text-block .feature-list li .feature-list-icon {
+    position: absolute;
+    left: 0;
+    top: 0.08rem;
+    color: white;
+    background: linear-gradient(180deg, var(--color-secondary), var(--color-accent));
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    box-shadow: 0 6px 18px rgba(9,35,11,0.18);
+}
+
+@media (max-width: 760px) {
+    .features-text-block .feature-list { grid-template-columns: 1fr; }
+}
+
+.feature-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.6rem;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+    color: white;
+    font-weight: 800;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform 0.28s ease, box-shadow 0.28s ease, opacity 0.28s ease;
+    margin: 0 auto;
+    box-shadow: 0 12px 30px rgba(9,35,11,0.18);
+}
+
+.feature-cta-btn:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 22px 48px rgba(9,35,11,0.25);
+    opacity: 0.98;
+}
+
+/* Subtle animation for the visual image */
+.features-visual-image {
+    transition: transform 0.6s cubic-bezier(.22,.9,.32,1), box-shadow 0.4s ease;
+}
+.features-visual-image:hover { transform: translateY(-6px) scale(1.02); }
+
+/* Right Side Grid */
+.features-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    align-content: start;
+}
+
+.bento-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2.4rem;
+    border-radius: 24px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 240px; /* taller cards for better spacing */
+}
+
+.bento-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.bento-icon-box {
+    width: 68px;
+    height: 68px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--color-secondary);
+}
+
+/* Visual panel used when cards are removed */
+.features-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* enable absolute positioning of the CTA */
+}
+.features-visual-image {
+    width: 100%;
+    max-width: 760px; /* larger image on desktop */
+    border-radius: var(--radius-lg);
+    box-shadow: 0 34px 80px rgba(6,20,10,0.36);
+    border: 6px solid rgba(255,255,255,0.04);
+    object-fit: cover;
+    transform-origin: center center;
+}
+
+/* Visual wrapper for image + CTA */
+.features-visual-wrap {
+    position: relative;
+    display: inline-block;
+    margin-right: 2.5rem; /* push image left a little to create breathing room from the text */
+}
+
+/* Floating CTA placed on the visual image */
+.visual-cta {
+    position: absolute;
+    left: 20px;
+    bottom: 22px;
+    z-index: 5;
+    padding: 0.8rem 1.2rem;
+    font-weight: 800;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+    color: white;
+    box-shadow: 0 18px 40px rgba(9,35,11,0.22);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.visual-cta:hover { transform: translateY(-4px); box-shadow: 0 28px 60px rgba(9,35,11,0.28); }
+
+@media (max-width: 968px) {
+    .features-visual-image { max-width: 480px; }
+}
+
+@media (max-width: 600px) {
+    .features-visual-image { max-width: 100%; }
+}
+
+.bento-card h4 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.bento-card p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .features-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    .features-text-block { text-align: center; }
+    .features-text-block h2 { font-size: 2.2rem; }
+    .feature-cta-btn { margin: 0 auto; }
+
+    /* Move the CTA below the image on tablet/mobile for readability */
+    .visual-cta { position: static; display: inline-block; margin: 1rem auto 0 auto; }
+
+    /* Remove the extra right margin on smaller screens so layout fits */
+    .features-visual-wrap { margin-right: 0; }
+}
+
+@media (max-width: 600px) {
+    .features-bento-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Insight Cards (Image + Content) - KEEPING FOR LEGACY OR OTHER SECTIONS IF NEEDED */
+.insight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.insight-card {
+    background: var(--color-bg-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-normal);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.insight-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+}
+
+.insight-image {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.insight-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.insight-card:hover .insight-image img {
+    transform: scale(1.05);
+}
+
+.insight-content {
+    padding: var(--spacing-md);
+    padding-top: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.insight-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: var(--color-primary);
+    color: var(--color-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -30px; /* Overlap image */
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+    z-index: 2;
+    font-size: 1.5rem;
+    border: 4px solid var(--color-bg-white);
+    box-shadow: var(--shadow-sm);
+}
+
+.insight-content h4 {
+    color: var(--color-text-dark);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.insight-content p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+/* Problems Section - Modern Split Layout */
+.problems-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Background Decoration */
+.problems-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.blob-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.6;
+}
+
+.blob-1 {
+    top: -10%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(45, 90, 39, 0.08);
+}
+
+.blob-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 193, 7, 0.1); /* Subtle gold/yellow */
+}
+
+.problems-intro {
+    padding-right: var(--spacing-md);
+}
+
+.problems-intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.problems-intro p {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-md);
+}
+
+.solution-highlight {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: white;
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--color-primary);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.solution-highlight p {
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+
+.problems-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.problem-ui-card {
+    background: white;
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.problem-ui-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.problem-card-image {
+    height: 140px;
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.problem-card-content {
+    padding: 1.5rem;
+    position: relative;
+}
+
+/* Floating icon over the image/content border */
+.problem-ui-icon {
+    position: absolute;
+    top: -24px;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+    background: white;
+    color: var(--color-primary); /* Changed from red to primary green */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 2px solid #F5F5F5;
+}
+
+.problem-ui-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-dark);
+    margin-top: 0.5rem; /* Space for the overlapping icon if needed, though icon is right aligned */
+}
+
+.problem-ui-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .problems-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .problems-intro {
+        text-align: center;
+        padding-right: 0;
+        margin-bottom: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 600px) {
+    .problems-grid-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+

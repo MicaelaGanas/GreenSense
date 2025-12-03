@@ -1,0 +1,26 @@
+@import 'variables.css';
+@import 'reset.css';
+@import 'components/header.css';
+@import 'components/hero.css';
+@import 'components/features.css';
+@import 'components/challenge.css';
+@import 'components/benefits.css';
+@import 'components/target-audience.css';
+@import 'components/differentiation.css';
+@import 'components/getting-started.css';
+@import 'components/future.css';
+@import 'components/how-it-works.css';
+@import 'components/cta.css';
+@import 'components/footer.css';
+@import 'components/buttons.css';
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

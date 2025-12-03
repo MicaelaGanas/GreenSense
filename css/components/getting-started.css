@@ -1,0 +1,136 @@
+/* Getting Started Section */
+.getting-started {
+    background-color: var(--color-bg-white);
+    padding: var(--spacing-xl) 0;
+    position: relative;
+}
+
+.start-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.start-header h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 1rem;
+}
+
+.start-header p {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+}
+
+.start-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+/* Connecting line for desktop */
+@media (min-width: 992px) {
+    .start-grid::before {
+        content: '';
+        position: absolute;
+        top: 165px; /* Adjust based on image height + badge position */
+        left: 10%;
+        width: 80%;
+        height: 2px;
+        background: repeating-linear-gradient(to right, var(--color-border) 0, var(--color-border) 10px, transparent 10px, transparent 20px);
+        z-index: 0;
+    }
+}
+
+.start-card {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    background: transparent;
+}
+
+.start-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    /* Removed overflow: hidden so the number badge can stick out */
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    border-radius: 16px; /* Keep radius for shadow shape */
+}
+
+.start-card:hover .start-image-wrapper {
+    transform: translateY(-5px);
+}
+
+.start-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px; /* Apply radius directly to image */
+}
+
+.start-number {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 10; /* Ensure it sits on top */
+}
+
+.start-content h4 {
+    font-size: 1.2rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.start-content p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
+.start-footer {
+    background: var(--color-bg-cream);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    border-left: 5px solid var(--color-accent);
+}
+
+.start-footer p {
+    font-size: 1.1rem;
+    color: var(--color-text-dark);
+    margin: 0;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .start-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .start-image-wrapper {
+        height: 220px;
+    }
+}

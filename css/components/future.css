@@ -1,0 +1,206 @@
+/* Future Section - Matching Features Design */
+.future-section {
+    /* Match features-highlight-section background */
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding: 7.5rem 0;
+}
+
+/* Background Overlay */
+.future-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 8% 18%, rgba(255,255,255,0.04), transparent 8%),
+                radial-gradient(circle at 88% 82%, rgba(0,0,0,0.04), transparent 12%);
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
+/* Background Shapes */
+.future-bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    z-index: 1;
+    pointer-events: none;
+}
+.future-shape-1 { top: -24%; left: -14%; width: 520px; height: 520px; background: var(--color-secondary); opacity: 0.12; }
+.future-shape-2 { bottom: -24%; right: -14%; width: 420px; height: 420px; background: var(--color-accent); opacity: 0.10; }
+
+.future-content-wrapper {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 48% 48%; /* Balanced split */
+    gap: 4%;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+/* Text Block Styling */
+.future-text-block h2 {
+    font-family: 'Playfair Display', var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: rgba(255,255,255,0.92);
+    line-height: 1.05;
+}
+
+.future-text-block .highlight-text {
+    display: block;
+    font-size: 3.6rem;
+    font-weight: 900;
+    margin-top: 0.15rem;
+    margin-left: 0;
+    color: transparent;
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    letter-spacing: -1px;
+}
+
+.future-text-block .highlight-text::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 8px;
+    margin-top: 0.55rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+    opacity: 0.9;
+}
+
+.future-text-block p {
+    font-size: 1.06rem;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 1.15rem;
+    line-height: 1.7;
+}
+
+/* Lists Styling */
+.future-lists-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.future-list-group h4 {
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.future-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.future-list li {
+    position: relative;
+    padding-left: 30px;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.future-list li i {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    color: var(--color-secondary);
+    font-size: 0.9rem;
+}
+
+/* Visual Side */
+.future-visual {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.future-visual-wrap {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    max-width: 550px; /* Increased size */
+    width: 100%;
+    aspect-ratio: 4/3; /* Fixed aspect ratio for slideshow */
+}
+
+.future-visual-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: imageFade 12s infinite;
+}
+
+/* Animation Delays for 3 images */
+.future-visual-image:nth-child(1) {
+    animation-delay: 0s;
+}
+.future-visual-image:nth-child(2) {
+    animation-delay: 4s;
+}
+.future-visual-image:nth-child(3) {
+    animation-delay: 8s;
+}
+
+@keyframes imageFade {
+    0% { opacity: 0; transform: scale(1.1); }
+    5% { opacity: 1; transform: scale(1); }
+    33% { opacity: 1; transform: scale(1); }
+    38% { opacity: 0; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.1); }
+}
+
+/* Quote Styling */
+.future-quote-box {
+    position: relative;
+    margin-top: 3rem;
+    padding-left: 2rem;
+    border-left: 3px solid var(--color-accent);
+    background: transparent;
+}
+
+.future-quote-box blockquote {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: #ffffff;
+    margin: 0;
+    font-style: italic;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 992px) {
+    .future-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .future-text-block {
+        order: 2; /* Text below image on mobile */
+    }
+    
+    .future-visual {
+        order: 1;
+    }
+}
+

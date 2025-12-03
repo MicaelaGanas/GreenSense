@@ -1,0 +1,116 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    padding: 1.5rem 0;
+    transition: all 0.4s ease;
+}
+
+.header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 0.8rem 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--color-text-dark);
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-btn {
+    background-color: var(--color-primary);
+    color: white !important;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(45, 90, 39, 0.2);
+}
+
+.nav-btn::after {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--color-text-dark);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        gap: 1.5rem;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+}
